@@ -10,7 +10,7 @@
 
 # next.js
 /.next/
-#/out/
+/out/
 
 # production
 /build
@@ -38,3 +38,6 @@ next-env.d.ts
 .turbo
 .vscode
 styles/dist.css
+
+# posts
+/posts
