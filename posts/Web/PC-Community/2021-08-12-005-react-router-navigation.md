@@ -1,14 +1,7 @@
 ---
 title: '학생 커뮤니티 사이트 제작 (5) - React Router & Navigation'
-date: 2021-08-12
 created: 2021-08-11
 description:
-
-categories:
-  - PC Community
-
-tags:
-  - [Node.js, React, Route, React-router, react-router-dom, Link]
 ---
 
 <br>

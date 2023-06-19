@@ -3,8 +3,11 @@ import Link from 'next/link';
 import fs from 'fs';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
+import { getBlog } from '#/lib/getBlog';
 
 export default function Page() {
+  const blog = JSON.stringify(getBlog());
+
   return (
     // <div className="space-y-8">
     //   <h1 className="text-xl font-medium text-gray-300">Examples</h1>
@@ -17,6 +20,6 @@ export default function Page() {
     //     </div>
     //   </div>
     // </div>
-    <div>home page</div>
+    <div>{blog}</div>
   );
 }
