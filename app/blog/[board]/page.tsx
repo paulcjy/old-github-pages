@@ -2,19 +2,24 @@ import PostBlock from './PostBlock';
 import { getBoard, getStaticParams } from '#/lib/getBlog';
 import Link from 'next/link';
 
-export function generateStaticParams() {
-  const staticParams = getStaticParams();
-  // return staticParams.board;
-  return [
-    { board: 'github' },
-    { board: 'pages' },
-    { board: 'pc' },
-    { board: 'linux' },
-  ];
+export async function generateStaticParams() {
+  const staticParams = await fetchStaticParams();
+  return staticParams.board;
+
+  // return [
+  //   { board: 'github' },
+  //   { board: 'pages' },
+  //   { board: 'pc' },
+  //   { board: 'linux' },
+  // ];
 }
 
 const fetchBoard = async (board: string) => {
   return await getBoard(board);
+};
+
+const fetchStaticParams = async () => {
+  return await getStaticParams();
 };
 
 export default async function Page({ params }: { params: { board: string } }) {

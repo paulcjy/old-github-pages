@@ -12,8 +12,8 @@ export const getBlog = cache(() => {
     posts: {},
     staticParams: {
       board: [],
-      post: []
-    }
+      post: [],
+    },
   };
 
   const dir = './posts';
@@ -25,8 +25,8 @@ export const getBlog = cache(() => {
 
     boards.forEach((board: string) => {
       // static params
-      blog.staticParams.board.push({ board })
-      
+      blog.staticParams.board.push({ board });
+
       // posts
       const posts: string[] = fs.readdirSync(`${dir}/${category}/${board}`);
 
@@ -80,4 +80,4 @@ export const getBoard = (target: string) => {
 
 export const getStaticParams = () => {
   return getBlog().staticParams;
-}
+};
